@@ -16,7 +16,7 @@ const sectorsMap = {
 	bottom_right: 8,
 };
 
-class SleepHover {
+class goodNightHover {
 	constructor( config ){
 		if(!config) console.warn(new Error('Неопределён конфиг'));
 
@@ -138,10 +138,10 @@ class SleepHover {
 			item.classList.add(defCfg._el);
 
 			item.addEventListener('mouseenter', event =>
-				this.enterEvent( event.srcElement, SleepHover.getDirection(event, true) ));
+				this.enterEvent( event.srcElement, goodNightHover.getDirection(event, true) ));
 
 			item.addEventListener('mouseleave', event =>
-				this.leaveEvent( event.srcElement, SleepHover.getDirection(event) ));
+				this.leaveEvent( event.srcElement, goodNightHover.getDirection(event) ));
 		});
 	}
 
@@ -153,7 +153,7 @@ class SleepHover {
 	 * Событие наведения курсора на элемент
 	 */
 	enterEvent(item, sector){
-		let currObj = SleepHover.getObject( this.model, 'node', item );
+		let currObj = goodNightHover.getObject( this.model, 'node', item );
 		currObj.active = true;
 
 		if(currObj.removing) {
@@ -166,7 +166,8 @@ class SleepHover {
 			currObj.overlay = document.createElement('div');
 			currObj.overlay.classList.add(defCfg._elOverlay);
 			currObj.overlay.innerHTML = currObj.data;
-			SleepHover.setStyleBySector(sector, currObj.overlay, currObj.w, currObj.h, this.config.reverse);
+			goodNightHover.setStyleBySector(sector, currObj.overlay, currObj.w, currObj.h, this.config.reverse);
+			currObj.overlay.style.transitionDuration = this.config.animationTime/1000 + 's';
 			item.appendChild( currObj.overlay );
 		}
 
@@ -185,11 +186,11 @@ class SleepHover {
 	 * Событие ухода курсора с элемента
 	 */
 	leaveEvent(item, sector){
-		let currObj = SleepHover.getObject( this.model, 'node', item );
+		let currObj = goodNightHover.getObject( this.model, 'node', item );
 		currObj.active = false;
 		currObj.removing = true;
 
-		SleepHover.setStyleBySector(sector, currObj.overlay, currObj.w, currObj.w, this.config.reverse);
+		goodNightHover.setStyleBySector(sector, currObj.overlay, currObj.w, currObj.w, this.config.reverse);
 
 		currObj.timeoutId = setTimeout(()=>{
 			currObj.removing = false;
@@ -200,4 +201,4 @@ class SleepHover {
 	}
 }
 
-export default SleepHover;
+export default goodNightHover;
