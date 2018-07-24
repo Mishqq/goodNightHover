@@ -1,0 +1,43 @@
+{
+	"name": "clearproject",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "webpack-dev-server --mode development --open",
+		"build": "npm run clean && webpack --mode production",
+		"clean": "rimraf ./dist/*"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-loader": "^7.1.5",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-stage-3": "^6.24.1",
+		"css-loader": "^1.0.0",
+		"ejs": "^2.6.1",
+		"ejs-loader": "^0.3.1",
+		"extract-text-webpack-plugin": "^4.0.0-beta.0",
+		"file-loader": "^1.1.11",
+		"html-loader": "^0.5.5",
+		"html-webpack-plugin": "^4.0.0-alpha",
+		"images-webpack-loader": "^2.1.0",
+		"mini-css-extract-plugin": "^0.4.1",
+		"node-sass": "^4.9.2",
+		"pug": "^2.0.3",
+		"pug-html-loader": "^1.1.5",
+		"rimraf": "^2.6.2",
+		"sass": "^1.9.1",
+		"sass-loader": "^7.0.3",
+		"style-loader": "^0.21.0",
+		"webpack": "^4.15.1",
+		"webpack-cli": "^3.0.8",
+		"webpack-dev-server": "^3.1.4",
+		"webpack-spritesmith": "^0.5.1"
+	},
+	"dependencies": {
+		"jquery": "^3.3.1",
+		"slider-pro": "^1.4.0"
+	}
+}
